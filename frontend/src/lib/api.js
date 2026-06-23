@@ -96,19 +96,19 @@ export const usersApi = {
 }
 
 export const reportsApi = {
-  dashboard:        ()       => api.get('/reports/dashboard'),
-  monthlyTrend:     ()       => api.get('/reports/monthly'),
-  leadSources:      ()       => api.get('/reports/lead-sources'),
-  leadStatuses:     ()       => api.get('/reports/lead-statuses'),
-  salesPerformance: ()       => api.get('/reports/sales'),
-  inventorySummary: ()       => api.get('/reports/inventory'),
-  paymentOutstanding:()      => api.get('/reports/outstanding'),
-  brokerPerformance:()       => api.get('/reports/brokers'),
-  export:           (t,p)   => api.get(`/reports/export/${t}`, { params:p, responseType:'blob' }),
-}),
-  inventory:   ()       => api.get('/reports/inventory'),
-  payments:    (params) => api.get('/reports/payments', { params }),
-  export:      (type, params) => api.get(`/reports/export/${type}`, { params, responseType:'blob' }),
+  dashboard: () => api.get('/reports/dashboard'),
+  monthlyTrend: () => api.get('/reports/monthly'),
+  leadSources: () => api.get('/reports/lead-sources'),
+  leadStatuses: () => api.get('/reports/lead-statuses'),
+  salesPerformance: () => api.get('/reports/sales'),
+  inventorySummary: () => api.get('/reports/inventory'),
+  paymentOutstanding: () => api.get('/reports/outstanding'),
+  brokerPerformance: () => api.get('/reports/brokers'),
+  payments: (params) => api.get('/reports/payments', { params }),
+  export: (type, params) =>
+    api.get(`/reports/export/${type}`, {
+      params,
+      responseType: 'blob',
+    }),
 }
-
 export default api
